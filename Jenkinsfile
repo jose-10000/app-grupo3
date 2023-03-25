@@ -9,14 +9,14 @@ pipeline{
 		stage('gitclone') {
 
 			steps {
-				git 'https://github.com/GabrielMR1974/DevOps-Grupo-3.git'
+				git 'https://github.com/jose-10000/app-grupo3.git'
 			}
 		}
 
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t Yeivt/grupo3-app:v1.0 ./DevOps-Grupo-3/Docker/Ejemplos/api-store'
+				sh 'docker build -t Yeivt/grupo3-app:v1.0 .'
 			}
 		}
 
