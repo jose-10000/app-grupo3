@@ -9,7 +9,7 @@ pipeline{
 		stage('gitclone') {
 
 			steps {
-				git 'https://github.com/jose-10000/app-grupo3.git'
+				git branch: 'main', url: 'https://github.com/jose-10000/app-grupo3.git'
 			}
 		}
 
