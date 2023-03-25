@@ -1,14 +1,12 @@
 pipeline{
 
-	agent {label 'main'}
-
 	environment {
 		DOCKERHUB_CREDENTIALS=credentials('jenkins-dockerhub')
 	}
 
+	agent any
 	stages {
-	    
-	    stage('gitclone') {
+		stage('gitclone') {
 
 			steps {
 				git 'https://github.com/GabrielMR1974/DevOps-Grupo-3.git'
