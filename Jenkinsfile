@@ -16,7 +16,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t Yeivt/grupo3-app:v1.0 .'
+				sh 'docker build -t yeivt/grupo3-app:v1.0 .'
 			}
 		}
 
@@ -30,7 +30,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push Yeivt/grupo3-app:v1.0'
+				sh 'docker push yeivt/grupo3-app:v1.0'
 			}
 		}
 	}
