@@ -16,7 +16,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t Yeivt/grupo3-app:v1.0 .'
+				sh 'docker build -t Yeivt/grupo3-app:$BUILD_NUMBER .'
 			}
 		}
 
