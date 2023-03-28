@@ -30,7 +30,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push yeivt/grupo3-$BUILD_NUMBER'
+				sh 'docker push yeivt/grupo3-app:$BUILD_NUMBER'
 			}
 		}
 	}
