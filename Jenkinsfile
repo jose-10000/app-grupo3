@@ -5,6 +5,7 @@ pipeline{
 	}
 
 	agent any
+
 	stages {
 		stage('gitclone') {
 
@@ -16,7 +17,8 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t yeivt/grupo3-app:$BUILD_NUMBER .'
+				echo 'Building..'
+				sh 'docker build -t jose10000/grupo3-app:v1.$BUILD_NUMBER .'
 			}
 		}
 
@@ -30,14 +32,16 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push yeivt/grupo3-app:$BUILD_NUMBER'
+				sh 'docker push jose10000/grupo3-app:v1.$BUILD_NUMBER'
 			}
 		}
 	}
 
 	post {
 		always {
+			sh 'docker rmi $(docker images -a -q)'
 			sh 'docker logout'
+
 		}
 	}
 
